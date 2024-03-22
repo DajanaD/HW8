@@ -3,7 +3,7 @@ from models import Quote, Author
 import redis
 from redis_lru import RedisLRU
 
-client = redis.StrictRedis(host="localhost", port=6379, password=None)
+client = redis.StrictRedis(host=f"mongodb+srv://user:123456789user1/myDB?retryWrites=true&w=majority&appName=Cluster0", port=6379, password=None)
 cache = RedisLRU(client)
 
 @cache

@@ -12,4 +12,4 @@ domain = config.get('DB', 'domain')
 
 # connect to cluster on AtlasDB with connection string
 
-connect(host=f"mongodb+srv://{mongo_user}:{mongodb_pass}@{domain}/{db_name}?retryWrites=true&w=majority&appName=Cluster0", ssl=True)
+connect_to_database = connect(db="db_name", host=f"mongodb+srv://{mongo_user}:{mongodb_pass}@{domain}/{db_name}?retryWrites=true&w=majority&appName=Cluster0", ssl=True)

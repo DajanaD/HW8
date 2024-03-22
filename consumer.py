@@ -6,7 +6,7 @@ import sys
 def main():
     # Підключення до RabbitMQ
     credentials = pika.PlainCredentials('guest', 'guest')
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host=f"mongodb+srv://{mongo_user}:{mongodb_pass}@{domain}/{db_name}?retryWrites=true&w=majority&appName=Cluster0", port=5672, credentials=credentials))
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost', credentials=credentials))
     channel = connection.channel()
     channel.queue_declare(queue='contacts')
 
