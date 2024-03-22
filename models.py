@@ -9,9 +9,9 @@ class Author(Document):
     meta = {"collection": "authors"}
 
 class Quote(Document):
-    author = ReferenceField(Author, reverse_delete_rule=CASCADE)
     tags = ListField(StringField(max_length=20))
-    quote = StringField
+    author = ReferenceField(Author, reverse_delete_rule=CASCADE)
+    quote = StringField()
     meta = {"collection": "quotes"}
 
 class Contact(Document):
