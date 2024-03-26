@@ -1,5 +1,4 @@
 import pika
-import connect 
 from models import Contact
 import sys
 
