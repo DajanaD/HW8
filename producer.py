@@ -6,8 +6,7 @@ from models import Contact
 def main():
     # Підключення до RabbitMQ
     credentials = pika.PlainCredentials(connect.mongo_user, connect.mongodb_pass)
-    connection = pika.BlockingConnection(pika.ConnectionParameters("localhost"tials=credentials))
-    channel = connection.channel()
+    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost', port=5672, credentials=credentials))
     channel.queue_declare(queue='contacts')
 
     # Генератор фейкових даних
